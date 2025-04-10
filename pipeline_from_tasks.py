@@ -38,8 +38,8 @@ def run_pipeline():
     pipe.add_step(
         name="stage_data",
         base_task_project="examples",
-        base_task_name="Pipeline step 1 dataset artifact",
-        parameter_override={"General/dataset_url": "${pipeline.url}"},
+        base_task_name="Pipeline step 1 dataset artifact"
+        # parameter_override={"General/dataset_url": "${pipeline.url}"},
     )
 
     pipe.add_step(
@@ -63,9 +63,9 @@ def run_pipeline():
     )
 
     # for debugging purposes use local jobs
-    pipe.start_locally()
+    # pipe.start_locally()
 
     # Starting the pipeline (in the background)
-    # pipe.start(queue="pipeline")  # already set pipeline queue
+    pipe.start(queue="pipeline")  # already set pipeline queue
 
     print("done")
